@@ -1,4 +1,4 @@
-package handler
+package api
 
 import (
 	"net/http"
@@ -11,7 +11,7 @@ import (
 
 func TestGetContents(t *testing.T) {
 	router := gin.Default()
-	Routes(router)
+	SetupRoutes(router)
 
 	w := httptest.NewRecorder()
 	req, _ := http.NewRequest("GET", "/v1/contents", nil)
