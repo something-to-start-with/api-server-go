@@ -1,4 +1,4 @@
-package handler
+package api
 
 import (
 	"net/http"
@@ -16,9 +16,11 @@ var contents = []content{
 	{ID: 2, Body: "content2"},
 }
 
-func Routes(route *gin.Engine) {
-	v1 := route.Group("/v1")
-	v1.GET("/contents", getContents)
+func SetupRoutes(router *gin.Engine) {
+	v1 := router.Group("/v1")
+	{
+		v1.GET("/contents", getContents)
+	}
 }
 
 func getContents(c *gin.Context) {
