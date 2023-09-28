@@ -1,0 +1,13 @@
+version: '3'
+
+services:
+  postgres:
+    container_name: api-postgres
+    image: postgres:latest
+    restart: always
+    environment:
+      POSTGRES_DB: api-server-db
+      POSTGRES_USER: api-server-user
+      POSTGRES_PASSWORD: 12345678
+    ports:
+      - 5432:5432
